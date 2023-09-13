@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    height: 100vh;
+    
+    background: #f3f3f3;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    white-space: nowrap;
+    padding-inline: 1rem;
+    
+    width: 10%;
+    
+    background: #e0e0e1;
+}
+
+.content {
+    display: grid;
+    place-items: center;
+    min-width: 90%;
+    height: 100%;
+}
+
+.parent {
+    border: 2px solid rgb(168, 168, 216);
+    border-radius: 16px;
+    margin-inline: 1rem; 
+
+    background-color: white;
+    
+    width: 50%;
+    aspect-ratio: 1;
+}
+
+.child {
+    display: grid;
+    place-items: center;
+
+    color: white;
+    background: rgb(59, 5, 236);
+    border-radius: 14px;
+
+    width: 50%;
+
+    aspect-ratio: 1;
+}
+
+.title {
+    text-transform: uppercase;
+
+    text-shadow: -1px -1px 0 #8d8c8c,
+                 1px -1px 0 #8d8c8c, 
+                 -1px 1px 0 #8d8c8c, 
+                 1px 1px 0 #8d8c8c;
+
+    color: rgb(224, 224, 225);
+    rotate: -90deg;
+    
+    font-size: clamp(.5rem, 4rem, 6vh);    /* clamp är responsivt. börja med det minsta värdet du kan tänka dig, det optimala och sedan det största. vh = viewport height  alltså procentuell höjd av skärmen */
+}
+
+.parent:hover > .child {
+    animation: moveBox 2s ease infinite;
+    animation-direction: reverse; /*/ vänder på animationen/*/
+
+
+}
+.child {
+    transition: transform 200ms;
+
+}
+
+@keyframes moveBox{
+    0%{
+        transform: translateX(0) ;
+    }
+    25%{
+        transform: translateX(100%);
+    }
+    50%{
+        transform: translateX(100%) translateY(100%);
+    }
+    75%{
+        transform: translateX(0) translateY(100%); 
+    }
+}
+
+
+

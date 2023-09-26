@@ -1,37 +1,39 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    display: flex;
+body {/*/trodde man skulle göra en meny som åte ner./*/
+    
 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 100%;
-    height: 100vh;
     
+    padding: 0;
+    margin: 0;
+    height: 100vh;
     background: #f3f3f3;
 }
 
-.left-column {
+header{
+    background:red;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-
-    white-space: nowrap;
-    padding-inline: 1rem;
-    
-    width: 10%;
-    
-    background: #e0e0e1;
+    padding:1rem; 
 }
-
+.menu1{
+    background: green;
+    
+}
+.main-nav{
+    display: flex;
+    justify-content: center;
+    gap:1rem;
+    list-style: none; 
+    
+}
+.main-nav:hover > .menu1{
+    animation: moveMenu1 1s ease infinite;
+}
 .content {
-    display: grid;
-    place-items: center;
     min-width: 90%;
-    height: 100%;
+    height: 100%; 
+    
 }
 
 .parent {
@@ -97,6 +99,26 @@ body {
         transform: translateX(0) translateY(100%); 
     }
 }
-
-
-
+img{
+    max-width: 100%;
+    height: 100%;
+}
+iframe{
+    padding: 1rem;
+    margin-top:1rem ;
+}
+@keyframes moveMenu{
+    0%{
+        transform: translateX(0);
+    }
+    25%{
+        transform: translateX(100%);
+    }
+}
+@keyframes moveMenu1{
+    0%{
+        transform: translateY(0) ;
+    }
+    25%{
+        transform: translateY(100%);
+    }}

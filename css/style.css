@@ -28,7 +28,7 @@ header{
     
 }
 .main-nav:hover > .menu1{
-    animation: moveMenu1 1s ease infinite;
+    animation: moveMenu1 1s ease forwards 1;
 }
 .content {
     min-width: 90%;
@@ -107,18 +107,12 @@ iframe{
     padding: 1rem;
     margin-top:1rem ;
 }
-@keyframes moveMenu{
-    0%{
-        transform: translateX(0);
-    }
-    25%{
-        transform: translateX(100%);
-    }
-}
+
+
 @keyframes moveMenu1{
     0%{
         transform: translateY(0) ;
     }
-    25%{
+    100%{
         transform: translateY(100%);
     }}
